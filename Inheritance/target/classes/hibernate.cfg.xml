@@ -30,20 +30,26 @@
 
     <session-factory>
 
-        <!-- Database connection settings -->
+        <!-- Database connection settings
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521/XE</property>
         <property name="connection.username">org.mahesh</property>
-        <property name="connection.password">org.mahesh</property>
+        <property name="connection.password">org.mahesh</property>-->
+
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/mahesh</property>
+        <property name="connection.username">mahesh</property>
+        <property name="connection.password">password</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">org.org.mahesh.hibernate.dialect.Oracle10gDialect</property>
+        <!--<property name="dialect">org.mahesh.hibernate.dialect.Oracle10gDialect</property>-->
+        <property name="dialect">org.mahesh.hibernate.dialect.MySQLDialect</property>
 
         <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.org.mahesh.hibernate.cache.NoCacheProvider</property>
+        <property name="cache.provider_class">org.mahesh.hibernate.cache.NoCacheProvider</property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
@@ -52,7 +58,17 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="org.mahesh.org.mahesh.dto.UserDetails"/>
+        <!--<mapping class="org.mahesh.org.mahesh.dto.singleTable.Vehicle" />
+        <mapping class="org.mahesh.org.mahesh.dto.singleTable.TwoWheeler"/>
+        <mapping class="org.mahesh.org.mahesh.dto.singleTable.FourWheeler" />-->
+
+        <!--<mapping class="org.mahesh.org.mahesh.dto.tablePerClass.Vehicle" />
+        <mapping class="org.mahesh.org.mahesh.dto.tablePerClass.TwoWheeler"/>
+        <mapping class="org.mahesh.org.mahesh.dto.tablePerClass.FourWheeler" />-->
+
+        <mapping class="org.mahesh.org.mahesh.dto.joined.Vehicle" />
+        <mapping class="org.mahesh.org.mahesh.dto.joined.TwoWheeler"/>
+        <mapping class="org.mahesh.org.mahesh.dto.joined.FourWheeler" />
 
     </session-factory>
 

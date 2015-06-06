@@ -1,0 +1,12 @@
+org\mahesh\dto\tablePerClass\Vehicle.class
+org\mahesh\hibernate\joined\Hibernate.class
+org\mahesh\dto\tablePerClass\FourWheeler.class
+org\mahesh\dto\singleTable\TwoWheeler.class
+org\mahesh\dto\joined\Vehicle.class
+org\mahesh\dto\joined\TwoWheeler.class
+org\mahesh\dto\singleTable\Vehicle.class
+org\mahesh\hibernate\tablePerClass\Hibernate.class
+org\mahesh\dto\tablePerClass\TwoWheeler.class
+org\mahesh\dto\singleTable\FourWheeler.class
+org\mahesh\hibernate\singleTable\Hibernate.class
+org\mahesh\dto\joined\FourWheeler.class
