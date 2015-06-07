@@ -28,9 +28,5 @@
         <mapping class="com.oneToOne.UserDetails" />
         <mapping class="com.oneToOne.Vehicle"/>
 
-        <!--<mapping class="com.mastertheboss.domain.Employee" />
-        <mapping class="com.mastertheboss.domain.Department" />-->
-
-        <!-- <mapping resource="com/mkyong/user/DBUser.hbm.xml"></mapping> -->
     </session-factory>
 </hibernate-configuration>

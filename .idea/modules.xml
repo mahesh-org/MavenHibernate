@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CrudOperation/CrudOperation.iml" filepath="$PROJECT_DIR$/CrudOperation/CrudOperation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Embedded/Embedded.iml" filepath="$PROJECT_DIR$/Embedded/Embedded.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ManyToMany/ManyToMany.iml" filepath="$PROJECT_DIR$/ManyToMany/ManyToMany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MavenHibernate.iml" filepath="$PROJECT_DIR$/MavenHibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OneToMany/OneToMany.iml" filepath="$PROJECT_DIR$/OneToMany/OneToMany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OneToOne/OneToOne.iml" filepath="$PROJECT_DIR$/OneToOne/OneToOne.iml" />
+    </modules>
+  </component>
+</project>

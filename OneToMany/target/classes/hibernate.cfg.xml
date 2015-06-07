@@ -58,7 +58,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="org.mahesh.org.mahesh.dto.User"/>
+        <mapping class="org.mahesh.org.mahesh.dto.UserDetails"/>
         <mapping class="org.mahesh.org.mahesh.dto.singleTable.Vehicle" />
 
     </session-factory>
