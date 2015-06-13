@@ -3,7 +3,7 @@ package org.mahesh.hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.mahesh.dto.UserDetails;
+import org.mahesh.dto.User;
 import org.mahesh.dto.Vehicle;
 
 /**
@@ -12,8 +12,8 @@ import org.mahesh.dto.Vehicle;
 public class Hibernate {
     public static void main(String[] args) {
 
-        UserDetails userDetails = new UserDetails();
-        userDetails.setUserName("First UserDetails!");
+        User user = new User();
+        user.setUserName("First UserDetails!");
 
         Vehicle vehicleCar = new Vehicle();
         vehicleCar.setVehicleName("Car");
@@ -22,28 +22,21 @@ public class Hibernate {
         vehicleJeep.setVehicleName("Jeep");
 
         //One to many relationship
-        userDetails.getVehicle().add(vehicleCar);
-        userDetails.getVehicle().add(vehicleJeep);
+        user.getVehicle().add(vehicleCar);
+        user.getVehicle().add(vehicleJeep);
 
         //Many to one relationship
-        vehicleCar.setUserDetails(userDetails);
-        vehicleJeep.setUserDetails(userDetails);
+        vehicleCar.setUser(user);
+        vehicleJeep.setUser(user);
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(userDetails);
+        session.save(user);
         session.save(vehicleCar);
         session.save(vehicleJeep);
         session.beginTransaction().commit();
         session.close();
-
-        /*userDetails = null;
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        userDetails = (UserDetails) session.get(UserDetails.class, 2);
-        session.close();
-        System.out.println("UserName= [" + userDetails.getUserName()+ "]");*/
 
     }
 }

@@ -26,7 +26,7 @@ public class Vehicle {
     // 3) One more way without mappedBy
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private UserDetails userDetails;
+    private User user;
 
     public int getVehicleId() {
         return vehicleId;
@@ -44,11 +44,11 @@ public class Vehicle {
         this.vehicleName = vehicleName;
     }
 
-    public UserDetails getUserDetails() {
-        return userDetails;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserDetails(UserDetails userDetails) {
-        this.userDetails = userDetails;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
