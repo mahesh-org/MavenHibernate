@@ -22,11 +22,11 @@
   ~ 51 Franklin Street, Fifth Floor
   ~ Boston, MA  02110-1301  USA
   -->
-<!DOCTYPE org.mahesh.hibernate-configuration PUBLIC
+<!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.org.mahesh.hibernate.org/dtd/org.mahesh.hibernate-configuration-3.0.dtd">
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
-<org.mahesh.hibernate-configuration>
+<hibernate-configuration>
 
     <session-factory>
 
@@ -46,10 +46,10 @@
 
         <!-- SQL dialect -->
         <!--<property name="dialect">org.mahesh.hibernate.dialect.Oracle10gDialect</property>-->
-        <property name="dialect">org.mahesh.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.mahesh.hibernate.cache.NoCacheProvider</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
@@ -58,9 +58,12 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="org.mahesh.org.mahesh.dto.User"/>
-        <mapping class="org.mahesh.org.mahesh.dto.singleTable.Vehicle" />
+        <mapping class="org.mahesh.dto.User"/>
+        <mapping class="org.mahesh.dto.Vehicle" />
 
     </session-factory>
 
-</org.mahesh.hibernate-configuration>
+</hibernate-configuration>
+
+
+

@@ -16,7 +16,7 @@ public class Vehicle {
     private int vehicleId;
     private String vehicleName;
     @ManyToMany(mappedBy = "vehicleList") // vehicleList should be matched with the variable in the UserDetails class
-    private Collection<UserDetails> userList = new ArrayList<UserDetails>();
+    private Collection<User> userList = new ArrayList<User>();
 
     public int getVehicleId() {
         return vehicleId;
@@ -34,11 +34,11 @@ public class Vehicle {
         this.vehicleName = vehicleName;
     }
 
-    public Collection<UserDetails> getUserDetails() {
+    public Collection<User> getUserDetails() {
         return userList;
     }
 
-    public void setUserDetails(Collection<UserDetails> userDetails) {
+    public void setUserDetails(Collection<User> userDetails) {
         this.userList = userDetails;
     }
 }

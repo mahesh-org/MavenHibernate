@@ -3,7 +3,7 @@ package org.mahesh.hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.mahesh.dto.UserDetails;
+import org.mahesh.dto.User;
 import org.mahesh.dto.Vehicle;
 
 /**
@@ -12,7 +12,7 @@ import org.mahesh.dto.Vehicle;
 public class Hibernate {
     public static void main(String[] args) {
 
-        UserDetails userDetails = new UserDetails();
+        User userDetails = new User();
         userDetails.setUserName("First UserDetails!");
 
         Vehicle vehicleCar = new Vehicle();
@@ -37,13 +37,6 @@ public class Hibernate {
         session.save(vehicleJeep);
         session.beginTransaction().commit();
         session.close();
-
-        userDetails = null;
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        userDetails = (UserDetails) session.get(UserDetails.class, 1);
-        session.close();
-        System.out.println("UserName= [" + userDetails.getUserName()+ "]");
 
     }
 }
