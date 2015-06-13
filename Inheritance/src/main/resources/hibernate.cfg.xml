@@ -22,11 +22,11 @@
   ~ 51 Franklin Street, Fifth Floor
   ~ Boston, MA  02110-1301  USA
   -->
-<!DOCTYPE org.mahesh.hibernate-configuration PUBLIC
+<!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.org.mahesh.hibernate.org/dtd/org.mahesh.hibernate-configuration-3.0.dtd">
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
-<org.mahesh.hibernate-configuration>
+<hibernate-configuration>
 
     <session-factory>
 
@@ -46,10 +46,10 @@
 
         <!-- SQL dialect -->
         <!--<property name="dialect">org.mahesh.hibernate.dialect.Oracle10gDialect</property>-->
-        <property name="dialect">org.mahesh.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.mahesh.hibernate.cache.NoCacheProvider</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
@@ -57,19 +57,46 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
 
-        <!-- Names the annotated entity class -->
-        <!--<mapping class="org.mahesh.org.mahesh.dto.singleTable.Vehicle" />
-        <mapping class="org.mahesh.org.mahesh.dto.singleTable.TwoWheeler"/>
-        <mapping class="org.mahesh.org.mahesh.dto.singleTable.FourWheeler" />-->
+        <!--
+            Creates a separate tables for all three and adding a super column intp sub class tables.
+            Checke subclass tables have a super class vehicleId
+            Vehicle (vehicleName, vehicleId)
+            Vehicle (vehicleName, vehicleId)
+            Vehicle (vehicleName, vehicleId)
+            TwoWheeler (twoWheelerName, vehicleId)
+            FourWheeler (fourWheelerName, vehicleId)
+        -->
+        <mapping class="org.mahesh.dto.joined.Vehicle" />
+        <mapping class="org.mahesh.dto.joined.TwoWheeler"/>
+        <mapping class="org.mahesh.dto.joined.FourWheeler" />
 
-        <!--<mapping class="org.mahesh.org.mahesh.dto.tablePerClass.Vehicle" />
-        <mapping class="org.mahesh.org.mahesh.dto.tablePerClass.TwoWheeler"/>
-        <mapping class="org.mahesh.org.mahesh.dto.tablePerClass.FourWheeler" />-->
+        <!--
+            Creates single table with dType. In this case most of the column values will be null.
+            Vehicle (vehicleName, VEHICLE_TYPE
+            Vehicle (vehicleName, twoWheelerName, VEHICLE_TYPE)
+            Vehicle (vehicleName, fourWheelerName, VEHICLE_TYPE)
+        -->
+        <!--<mapping class="org.mahesh.dto.singleTable.Vehicle" />
+        <mapping class="org.mahesh.dto.singleTable.TwoWheeler"/>
+        <mapping class="org.mahesh.dto.singleTable.FourWheeler"/>-->
 
-        <mapping class="org.mahesh.org.mahesh.dto.joined.Vehicle" />
-        <mapping class="org.mahesh.org.mahesh.dto.joined.TwoWheeler"/>
-        <mapping class="org.mahesh.org.mahesh.dto.joined.FourWheeler" />
+        <!--
+            Creates three tables (Vehicle, TwoVehicle, FourVehicle)
+            Creates a VehicleId in the same tables. No relations ship will be stored in the Vehicle table
+            It allows you to delete any delete in this (try deleting the table)
+                Vehicle (vehicleName, vehicleId)
+                TwoWheeler (vehicleName, twoWheelerName, vehicleId)
+                FourWheeler (vehicleName, fourWheelerName, vehicleId)
+        -->
+        <!--<mapping class="org.mahesh.dto.tablePerClass.Vehicle" />
+        <mapping class="org.mahesh.dto.tablePerClass.TwoWheeler"/>
+        <mapping class="org.mahesh.dto.tablePerClass.FourWheeler" />-->
 
     </session-factory>
 
-</org.mahesh.hibernate-configuration>
+</hibernate-configuration>
+
+
+
+
+
