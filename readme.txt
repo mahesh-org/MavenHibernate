@@ -1,3 +1,8 @@
+HSQL UI commands:
+HSQL Startup:
+java -cp C:\Users\IBM_ADMIN\.m2\repository\org\hsqldb\hsqldb\2.3.1\hsqldb-2.3.1.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
+java -cp C:\Users\IBM_ADMIN\.m2\repository\org\hsqldb\hsqldb\2.3.1\hsqldb-2.3.1.jar org.hsqldb.util.DatabaseManager
+
 Hibernate configuraiton
 Model Object - use annotation
 Service Method
