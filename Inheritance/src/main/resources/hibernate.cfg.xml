@@ -36,17 +36,21 @@
         <property name="connection.username">org.mahesh</property>
         <property name="connection.password">org.mahesh</property>-->
 
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/mahesh</property>
         <property name="connection.username">mahesh</property>
-        <property name="connection.password">password</property>
+        <property name="connection.password">password</property>-->
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:hsql://localhost/xdb</property>
+        <property name="connection.username">sa</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
 
         <!-- SQL dialect -->
         <!--<property name="dialect">org.mahesh.hibernate.dialect.Oracle10gDialect</property>-->
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!---<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
@@ -58,7 +62,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!--
-            Creates a separate tables for all three and adding a super column intp sub class tables.
+            Creates a separate tables for all three and adding a super column into sub class tables.
             Checke subclass tables have a super class vehicleId
             Vehicle (vehicleName, vehicleId)
             Vehicle (vehicleName, vehicleId)
@@ -83,7 +87,7 @@
         <!--
             Creates three tables (Vehicle, TwoVehicle, FourVehicle)
             Creates a VehicleId in the same tables. No relations ship will be stored in the Vehicle table
-            It allows you to delete any delete in this (try deleting the table)
+            It allows you to delete any table/row in this (try deleting the table)
                 Vehicle (vehicleName, vehicleId)
                 TwoWheeler (vehicleName, twoWheelerName, vehicleId)
                 FourWheeler (vehicleName, fourWheelerName, vehicleId)
