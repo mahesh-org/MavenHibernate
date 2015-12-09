@@ -28,6 +28,8 @@ public class User {
     private int userId;
     @Column (name = "USER_NAME")
     private String userName;
+    //The temporal data is the data related to time. If you want to store precise date / time or both(TIMESTAMP)
+    //@Temporal is a JPA annotation that convert back and forth between time-stamp and java util date. It also convert time-stamp into time. For example, in below snippet , ?@Temporal(TemporalType.DATE)? drops the time value and only preserves the date
     @Temporal(TemporalType.DATE)
     private Date joinedDate;
     @Embedded
